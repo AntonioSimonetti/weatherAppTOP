@@ -16,7 +16,7 @@ const city = document.getElementById("city-input").value;
 async function getInfo(city) {
   try {
     const response = await fetch(
-      `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`,
+      `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`,
       { mode: "cors" }
     );
     return await response.json();
