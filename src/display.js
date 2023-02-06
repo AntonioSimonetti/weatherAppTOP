@@ -1,0 +1,148 @@
+export { displayWeatherData }; //no import weatherData because you are not using here this function but in index.js(thats why is working?)
+
+function displayWeatherData(weatherData, iconUrl) {
+  const location = weatherData.location;
+  const timestamp = weatherData.timestamp;
+  const temperature = weatherData.temperature;
+  const weatherCondition = weatherData.weatherCondition;
+  const windSpeed = weatherData.windSpeed;
+  const humidity = weatherData.humidity;
+  const pressure = weatherData.pressure;
+  const sunrise = weatherData.sunrise;
+  const sunset = weatherData.sunset;
+
+  // remove all child elements from container
+  const container = document.getElementById("weather-container");
+  while (container.firstChild) {
+    container.removeChild(container.firstChild);
+  }
+
+  const firstContainer = document.createElement("div");
+  firstContainer.classList.add("First-container");
+  const locationElement = document.createElement("p");
+  locationElement.classList.add("City-name");
+  locationElement.textContent = `${location}`;
+  const timestampElement = document.createElement("p");
+  timestampElement.classList.add("Date");
+  timestampElement.textContent = `${timestamp}`;
+  firstContainer.appendChild(locationElement);
+  firstContainer.appendChild(timestampElement);
+  container.appendChild(firstContainer);
+
+  const secondContainer = document.createElement("div");
+  secondContainer.classList.add("Second-container");
+  const weatherImage = document.createElement("img");
+  weatherImage.setAttribute("id", "WeatherImage");
+  console.log(iconUrl);
+  weatherImage.src = iconUrl;
+  secondContainer.appendChild(weatherImage);
+  container.appendChild(secondContainer);
+
+  const thirdContainer = document.createElement("div");
+  thirdContainer.classList.add("Third-container");
+  const temperatureElement = document.createElement("p");
+  temperatureElement.classList.add("Temperature");
+  temperatureElement.setAttribute("id", "Temperature");
+  temperatureElement.textContent = `${temperature}°C`;
+  const weatherConditionElement = document.createElement("p");
+  weatherConditionElement.classList.add("Weather-condition");
+  weatherConditionElement.textContent = `${weatherCondition}`;
+  thirdContainer.appendChild(temperatureElement);
+  thirdContainer.appendChild(weatherConditionElement);
+  container.appendChild(thirdContainer);
+
+  const fourthContainer = document.createElement("div");
+  fourthContainer.classList.add("Fourth-container");
+  const windSpeedContainer = document.createElement("div");
+  windSpeedContainer.classList.add("Windspeed-container");
+  const containerLogoText = document.createElement("div");
+  containerLogoText.classList.add("Logo-Text");
+  const logoWind = document.createElement("img");
+  logoWind.classList.add("Logo-wind");
+  logoWind.src = `./src/icons/windspeedlogo.svg`;
+  const textLogo = document.createElement("p");
+  textLogo.classList.add("Text-logo");
+  textLogo.textContent = "WIND";
+  containerLogoText.appendChild(logoWind);
+  containerLogoText.appendChild(textLogo);
+  const valueWindContainer = document.createElement("div");
+  valueWindContainer.classList.add("Value-Wind-Container");
+  const valueWind = document.createElement("p");
+  valueWind.classList.add("Wind-value");
+  valueWind.setAttribute("id", "WindspeedDOM");
+  valueWind.textContent = `${windSpeed} m/s`;
+  const humidityContainer = document.createElement("div");
+  humidityContainer.classList.add("Humidity-container");
+  const containerLogoTextHumidity = document.createElement("div");
+  containerLogoTextHumidity.classList.add("Logo-Text-Humidity");
+  const logoHumidity = document.createElement("img");
+  logoHumidity.classList.add("Logo-humidity");
+  logoHumidity.src = `./src/icons/humiditylogo.svg`;
+  const textLogoHumidity = document.createElement("p");
+  textLogoHumidity.classList.add("Text-logo-humidity");
+  textLogoHumidity.textContent = "HUMIDITY";
+  containerLogoTextHumidity.appendChild(logoHumidity);
+  containerLogoTextHumidity.appendChild(textLogoHumidity);
+  const valueHumidityContainer = document.createElement("div");
+  valueHumidityContainer.classList.add("Value-Humidity-Container");
+  const valueHumidity = document.createElement("p");
+  valueHumidity.classList.add("Humidity-value");
+  valueHumidity.textContent = `${humidity}%`;
+  const pressureContainer = document.createElement("div");
+  pressureContainer.classList.add("Pressure-container");
+  const containerLogoTextPressure = document.createElement("div");
+  containerLogoTextPressure.classList.add("Logo-Text-Pressure");
+  const logoPressure = document.createElement("img");
+  logoPressure.classList.add("Logo-pressure");
+  logoPressure.src = `./src/icons/pressurelogo.svg`;
+  const textLogoPressure = document.createElement("p");
+  textLogoPressure.classList.add("Text-logo-humidity");
+  textLogoPressure.textContent = "PRESSURE";
+  containerLogoTextPressure.appendChild(logoPressure);
+  containerLogoTextPressure.appendChild(textLogoPressure);
+  const valuePressureContainer = document.createElement("div");
+  valuePressureContainer.classList.add("Value-Pressure-Container");
+  const valuePressure = document.createElement("p");
+  valuePressure.classList.add("Pressure-value");
+  valuePressure.setAttribute("id", "PressureDOM");
+  valuePressure.textContent = `${pressure} mbar`;
+  valuePressureContainer.appendChild(valuePressure);
+  pressureContainer.appendChild(containerLogoTextPressure);
+  pressureContainer.appendChild(valuePressureContainer);
+  valueHumidityContainer.appendChild(valueHumidity);
+  humidityContainer.appendChild(containerLogoTextHumidity);
+  humidityContainer.appendChild(valueHumidityContainer);
+  valueWindContainer.appendChild(valueWind);
+  windSpeedContainer.appendChild(containerLogoText);
+  windSpeedContainer.appendChild(valueWindContainer);
+  fourthContainer.appendChild(windSpeedContainer);
+  fourthContainer.appendChild(humidityContainer);
+  fourthContainer.appendChild(pressureContainer);
+  container.appendChild(fourthContainer);
+
+  const fifthContainer = document.createElement("div");
+  fifthContainer.classList.add("Fifth-container");
+  const sunriseContainer = document.createElement("div");
+  sunriseContainer.classList.add("Sunrise-container");
+  const sunriseImg = document.createElement("img");
+  sunriseImg.classList.add("Sunrise-img");
+  sunriseImg.src = `./src/icons/sunrise.svg`;
+  const sunriseData = document.createElement("p");
+  sunriseData.classList.add("Sunrise-data");
+  sunriseData.textContent = `${sunrise}`;
+  const sunsetContainer = document.createElement("div");
+  sunsetContainer.classList.add("Sunset-container");
+  const sunsetImg = document.createElement("img");
+  sunsetImg.classList.add("Sunrise-img");
+  sunsetImg.src = `./src/icons/sunset.svg`;
+  const sunsetData = document.createElement("p");
+  sunsetData.classList.add("Sunset-data");
+  sunsetData.textContent = `${sunset}`;
+  sunriseContainer.appendChild(sunriseImg);
+  sunriseContainer.appendChild(sunriseData);
+  sunsetContainer.appendChild(sunsetImg);
+  sunsetContainer.appendChild(sunsetData);
+  fifthContainer.appendChild(sunriseContainer);
+  fifthContainer.appendChild(sunsetContainer);
+  container.appendChild(fifthContainer);
+}

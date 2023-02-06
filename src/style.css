@@ -1,0 +1,274 @@
+@font-face {
+    font-family: 'Poppins';
+    src:  url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap') format('tff');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+
+html{
+    font-size:30px;
+    font-family: 'Poppins' , sans-serif; 
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-width: 100%;
+    min-height: 100%;
+    color:#ceeddb ;
+    background-image: linear-gradient(#2473C7,#1B5798,#144170);
+    background-size: cover;
+}
+
+#weather-form {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 0.3rem;
+    border-radius: 8px;
+}
+
+#city-input {
+    border: none;
+    outline: none;
+    box-shadow: none;
+    border-radius: 8px;
+    background-color: #ceeddb;
+    padding: 0.2rem;
+    margin-right: 0.2rem;
+}
+
+#city-input:focus {
+    background-color: #ceeddb;
+}
+
+#LocationBtn, #Change {
+    background-color: #ceeddb;
+    border: none;
+    padding: 0.2rem;
+    border-radius: 8px;
+    box-shadow: 1px 1px 1px #9f9f9f;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    color: gray;
+    margin-right: 0.1rem;
+    
+}
+
+#LocationBtn:active, #Change:active
+{
+    transform: translateY(2px);
+    box-shadow: none;
+}
+
+
+.weatherContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width:100vh;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+
+.First-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    animation: show-container 2s ease-in-out;
+}
+
+.City-name {
+    font-weight: bolder;
+    font-size: 1.4rem; 
+    margin-bottom: -0.2rem; /*Creating a little space between City-name and Date*/
+}
+
+.Date {
+    font-size: 0.5rem;
+}
+
+.Second-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25%;
+    height: 35%;
+    animation: show-container 2s ease-in-out;
+}
+
+#WeatherImage{
+  height: 100%;
+  width: 100%;
+}
+
+.Third-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 25%;
+    height: 15%;
+    animation: show-container 2s ease-in-out;
+}
+
+.Temperature {
+    font-weight: bolder;
+    font-size: 2rem; 
+    margin-bottom: -1.2rem; /*Creating a little space between City-name and Date*/
+}
+
+.Date {
+    font-size: 0.5rem;
+}
+
+.Fourth-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 12rem;
+    height: 8%;
+    background-color: #ceeddb;
+    border-radius: 8px;
+    color: #6b61ff;
+    margin-bottom: 0.8rem; /*Creating a little space between Logo-text and wind-value*/
+    animation: show-container 2s ease-in-out;
+}
+
+.Windspeed-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap:0.5rem;
+    width: 33%;
+    height: 100%;
+    order: 1;
+}
+
+.Humidity-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap:0.5rem;
+    width: 33%;
+    height: 100%;
+}
+
+.Pressure-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap:0.5rem;
+    width: 33%;
+    height: 100%;
+    order: 2;
+}
+
+.Logo-Text, .Logo-Text-Humidity, .Logo-Text-Pressure {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50%;
+    font-size: 0.4rem;
+    margin-bottom: -0.8rem; /*Creating a little space between Logo-text and wind-value*/
+}
+
+.Value-Wind-Container, .Value-Humidity-Container, .Value-Pressure-Container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 30px;
+}
+
+.Wind-value, .Humidity-value, .Pressure-value  {
+    font-weight: bolder;
+    font-size: 0.5rem;
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+.Fifth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 50%;
+    animation: show-container 2s ease-in-out;
+}
+
+.Sunrise-container, .Sunset-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-weight: bolder;
+}
+
+.Logo-wind, .Logo-humidity, .Logo-pressure {
+    width: 0.6rem;
+    height: 0.6rem;
+    margin-right: 0.1rem;
+}
+
+.Sunrise-img, .Sunset-img {
+    width: 25%;
+    height: 25%;
+}
+
+@keyframes show-container {
+    from {
+      opacity: 0;
+      transform: translateY(-30%);
+    }
+  
+    to {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }
+
+  @media only screen and (max-width: 960px) {
+    .weatherContainer {
+      width: 10vh;            /*I do not know why this fix some issues I had. I have some ideas but Im not sure.*/
+    }
+    .Fifth-container {
+        width: 10rem;
+        height: 4rem;
+    }
+  }
+
+  @media (max-width: 359px) {
+    html {
+        font-size: 20px;
+    }
+
+  }
+
+  @media (max-width: 240px) {
+    html {
+        font-size: 10px;
+    }
+  }
+
