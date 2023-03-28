@@ -21,10 +21,10 @@ Forecast information is unavailable due to limitations imposed by the free versi
 
 The following technologies were used to build this app:
 
-**HTML
-CSS
-JavaScript
-OpenWeatherMap API
+**HTML<br>
+CSS<br>
+JavaScript<br>
+OpenWeatherMap API<br>**
 
 **Credits**
 The design and layout of the app were inspired by: https://dribbble.com/search/weather-app  
