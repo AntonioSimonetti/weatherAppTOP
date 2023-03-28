@@ -1,8 +1,9 @@
-*Weather App*
+Weather App
+
 This is a simple weather app created as a project for The Odin Project curriculum.
 
 Live Version
-A live version of the project can be accessed here: 
+A live version of the project can be accessed here: https://antoniosimonetti.github.io/weatherAppTOP/
 
 Benefits
 One of the main benefits of working on this project was that it helped me gain a better understanding of how to use asynchronous code. 
